@@ -11,11 +11,11 @@ const GuardedRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={(props) =>
-        getLogInStatus() == true ? (
+        // getLogInStatus() == true ? (
           <Component {...props} />
-        ) : (
-          <Redirect to="/" />
-        )
+        // ) : (
+          // <Redirect to="/" />
+        // )
       }
     />
   );
