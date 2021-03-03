@@ -1,0 +1,72 @@
+.navbar {
+    position: absolute;
+    width: 1079px;
+    height: 67px;
+    left: 0px;
+    top: 0px;
+  /* justify-content: center; */
+}
+
+.navbar-title {
+}
+
+.navbar-links {
+    width: 282px;
+    height: 49px;
+    left: 21px;
+    top: 9px;
+    background: url('divorce-logo.png');
+}
+
+.servicios {
+    position: absolute;
+    width: 111px;
+    height: 35px;
+    left: 379px;
+    top: 23px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+}
+.register-button {
+    position: absolute;
+    width: 140px;
+    height: 44px;
+    left: 897px;
+    top: 18px;
+
+    background: #FFFF;
+    border: 1px solid #388E8E;
+    box-sizing: border-box;
+    border-radius: 45px;
+}
+.register {
+    position: absolute;
+    width: 119px;
+    height: 24px;
+    left: 907px;
+    top: 23px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+
+
+}
+
+.login {
+    position: absolute;
+    width: 107px;
+    height: 35px;
+    left: 776px;
+    top: 23px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+
+}
