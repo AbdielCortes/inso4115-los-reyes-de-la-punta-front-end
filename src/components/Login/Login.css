@@ -1,0 +1,12 @@
+.loginbutton {
+    background-color: #388E8E;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20px;
+    transition-duration: 10ms;
+  }
