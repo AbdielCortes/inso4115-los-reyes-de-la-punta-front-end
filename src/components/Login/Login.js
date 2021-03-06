@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import history from "../../Routing/history";
 import "./Login.css";
 import LoginForm from "./LoginForm";
+import Navbar from "../Navbar/Navbar"
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 
@@ -108,6 +109,7 @@ export class Login extends Component {
 
         return (
             <div className="Login">
+                <Navbar/>
                 <a href="" onClick={() => history.push("/")}>home</a>
                 <LoginForm handleChange={this.handleChange} values={values} />
                 <label> {this.state.errorMessage} </label>

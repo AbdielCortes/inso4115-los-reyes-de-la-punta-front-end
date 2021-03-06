@@ -10,7 +10,6 @@
   /* justify-content: center; */
 }
 
-
 .navbar-logo {
   margin-left: 0.2rem;
   height: 2em;
@@ -24,29 +23,29 @@
     border-radius: 45px;
     width: 140px;
     height: 44px;
-    left: 990px;
+    left: calc(95% - 140px);
     top: 18px;
     font-size: 24px;
     line-height: 29px;
 }
 
-
 .servicios {
     position: absolute;
     width: 111px;
     height: 35px;
-    left: 379px;
+    left: calc(60% - (111px / 2));
     top: 23px;
 
     font-size: 24px;
     line-height: 29px;
     text-align: center;
 }
+
 .login {
     position: absolute;
     width: 107px;
     height: 35px;
-    left: 776px;
+    left: calc(75% - (107px / 2));
     top: 23px;
 
     font-size: 24px;
