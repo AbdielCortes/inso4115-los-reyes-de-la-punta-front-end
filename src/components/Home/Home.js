@@ -12,8 +12,7 @@ export class Home extends Component {
                     <div className='start-text'>
                         Make your divorce a fast process!
                     </div>
-                    <button className='start-button'></button>
-                    <div className='start-button-text'>Register for Free!</div>
+                    <button className='start-button'>Register for Free!</button>
                 </div>
 
             </>

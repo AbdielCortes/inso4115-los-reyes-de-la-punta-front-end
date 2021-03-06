@@ -8,7 +8,7 @@ function Navbar()  {
     <nav className='navbar'>
       <img src={logo} className='navbar-logo'/>
       <div className='servicios'>Servicios</div>
-      <div className='login'>Login</div>
+      <button className='login'>Login</button>
       <button className='navbar-button'>Register</button>
     </nav>
   );
