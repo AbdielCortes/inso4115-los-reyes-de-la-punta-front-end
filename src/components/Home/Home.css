@@ -1,8 +1,48 @@
-.nav {
-    background-color: #FFFFFF;
+.start {
+    position: absolute;
+    width: 1079px;
+    height: 500px;
+    left: 0px;
+    top: 67px;
+    background-color: #388E8E;
 }
 
-.start {
-    background-color: #388E8E;
+.start-text {
+    position: absolute;
+    width: 542px;
+    height: 181px;
+    left: 269px;
+    top: 83px;
+    font-weight: bold;
+    font-size: 72px;
+    line-height: 86px;
     text-align: center;
+    color: #FFFFFF;
+}
+
+.start-button {
+    position: absolute;
+    width: 332px;
+    height: 64px;
+    left: 374px;
+    top: 390px;
+
+    background: #FFD2B4;
+    border-radius: 25px;
+}
+
+.start-button-text {
+    position: absolute;
+    width: 297px;
+    height: 47px;
+    left: 391px;
+    top: 403px;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+
+    color: #004D4D;
+}
+
+@media screen and (max-width: 1079px) {
 }

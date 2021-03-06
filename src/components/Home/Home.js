@@ -6,7 +6,17 @@ import "./Home.css"
 export class Home extends Component {
     render() {
         return (
+            <>
                 <Navbar/>
+                <div className='start'>
+                    <div className='start-text'>
+                        Make your divorce a fast process!
+                    </div>
+                    <button className='start-button'></button>
+                    <div className='start-button-text'>Register for Free!</div>
+                </div>
+
+            </>
         )
     }
 }
