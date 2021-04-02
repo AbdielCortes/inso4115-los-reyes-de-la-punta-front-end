@@ -1,12 +1,32 @@
+html {
+  background-color: rgb(238, 238, 238);
+}
+
+body {
+  background-color: rgb(238, 238, 238);
+}
+
+.Login {
+  background-color: rgb(238, 238, 238);
+}
+
+.title {
+  font-size: 40px;
+}
+
 .loginbutton {
-    background-color: #388E8E;
-    border: none;
-    color: white;
-    padding: 10px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 20px;
-    transition-duration: 10ms;
-  }
+  background-color: #388E8E;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 20px;
+  transition-duration: 10ms;
+}
+
+.loginbutton:hover {
+  background-color: #338080;
+}

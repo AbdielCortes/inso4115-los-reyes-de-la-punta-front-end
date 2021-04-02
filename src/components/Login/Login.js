@@ -110,9 +110,9 @@ export class Login extends Component {
         return (
             <div className="Login">
                 <Navbar/>
-                <a href="" onClick={() => history.push("/")}>home</a>
+                <p className="title">Login</p>
                 <LoginForm handleChange={this.handleChange} values={values} />
-                <label> {this.state.errorMessage} </label>
+                <label> {this.state.errorMessage} </label> <br/>
                 <button className="loginbutton" onClick={this.handleSubmit}>
                     Log in
                 </button>

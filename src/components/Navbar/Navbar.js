@@ -7,7 +7,9 @@ function Navbar()  {
 
   return (
     <nav className='navbar'>
-      <img src={logo} className='navbar-logo'/>
+      <button className="navbar-logo-home" onClick={() => history.push("/")}>
+        <img src={logo} className='navbar-logo'/>
+      </button>
       <div className='servicios'>Servicios</div>
       <button className='login' onClick={() => history.push("/login")}>Login</button>
       <button className='navbar-button'>Register</button>
