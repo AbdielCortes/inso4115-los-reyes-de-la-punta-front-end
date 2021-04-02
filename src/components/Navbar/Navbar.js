@@ -12,7 +12,7 @@ function Navbar()  {
       </button>
       <div className='servicios'>Servicios</div>
       <button className='login' onClick={() => history.push("/login")}>Login</button>
-      <button className='navbar-button'>Register</button>
+      <button className='signup' onClick={() => history.push("/signup")}className='navbar-button'>Sign Up</button>
     </nav>
   );
 }
