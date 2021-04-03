@@ -12,7 +12,7 @@ export class Home extends Component {
                     <div className='start-text'>
                         Make your divorce a fast process!
                     </div>
-                    <button className='start-button'>Register for Free!</button>
+                    <button className='start-button' onClick={() => history.push("/signup")}>Register for Free!</button>
                 </div>
 
             </>

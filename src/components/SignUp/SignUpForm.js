@@ -1,17 +1,21 @@
 import React, { Component } from 'react'
 import "../Login/Login.css";
 import "../Login/LoginForm.css";
+import "./SignUpForm.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 export class SignUpForm extends Component {
     state = {
         isRevealedPassword: false,
-        isRevealedConfirmPassword: false
+        isRevealedConfirmPassword: false,
+        isRevealedRua: false
     };
     
     togglePassword = (e) => {
-        this.setState({ isRevealedPassword: !this.state.isRevealedPassword });
+        this.setState({ 
+            isRevealedPassword: !this.state.isRevealedPassword 
+        });
     };
     
     toggleConfirmPassword = (e) => {
@@ -19,14 +23,30 @@ export class SignUpForm extends Component {
             isRevealedConfirmPassword: !this.state.isRevealedConfirmPassword,
         });
     };
+
+    toggleRua = (e) => {
+        this.setState({
+            isRevealedRua: !this.state.isRevealedRua,
+        });
+    };
       
     render() {
         const { values, handleChange } = this.props;
-        const { isRevealedPassword, isRevealedConfirmPassword } = this.state;
+        const { isRevealedPassword, isRevealedConfirmPassword, isRevealedRua } = this.state;
 
         return (
             <div>
                 <form>
+                    <div>
+                        <p>I want to create an account as an attorney
+                            <label class="switch">
+                                <input type="checkbox"
+                                onChange={handleChange("isAttorney")}
+                                />
+                                <span class="slider round" onClick={this.toggleRua}/>
+                            </label>
+                        </p>
+                    </div>
                     <div className="input-container">
                         <input
                         type="firstName"
@@ -43,14 +63,18 @@ export class SignUpForm extends Component {
                         defaultValue={values.LastName}
                         />
                     </div>
-                    <div className="input-container">
-                        <input
-                        type="rua"
-                        placeholder="rua"
-                        onChange={handleChange("rua")}
-                        defaultValue={values.rua}
-                        />
-                    </div>
+                    {isRevealedRua ? (
+                        <div className="input-container">
+                            <input
+                            type="rua"
+                            placeholder="rua"
+                            onChange={handleChange("rua")}
+                            defaultValue={values.rua}
+                            />
+                        </div>
+                    ) : (
+                        <p className="nothing"></p>
+                    )}
                     <div className="input-container">
                         <input
                         type="email"

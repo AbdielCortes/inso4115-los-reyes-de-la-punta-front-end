@@ -16,12 +16,18 @@ export class SignUp extends Component {
         email: "",
         password: "",
         confirmPassword: "",
-        errorMessage: ""
+        errorMessage: "",
+        isAttorney: false
     };
 
         //Handle fields change
     handleChange = input => e => {
-        this.setState({[input]: e.target.value});
+        if (input == "isAttorney") {
+            this.state.isAttorney = !this.state.isAttorney;
+            this.setState({[this.state.isAttorney]: !this.state.isAttorney});
+        } else {
+            this.setState({[input]: e.target.value});
+        }
     }
 
     validateFields = () => {
@@ -31,60 +37,60 @@ export class SignUp extends Component {
         let errorArray = [];
         // if nothing was typed into first name
         if (this.state.firstName.length === 0) { 
-        errorArray.push("first name");
+            errorArray.push("first name");
         }
         // if nothing was typed into last name
         if (this.state.lastName.length === 0) { 
-        errorArray.push("last name");
+            errorArray.push("last name");
         }
         // if nothing was typed into rua 
         // OR the student number was not fully typed || this.state.studentNumber.charAt(this.state.studentNumber.length-1) === '_'
-        if (this.state.rua.length === 0) {
-        errorArray.push("rua");
+        if (this.state.isAttorney && this.state.rua.length === 0) {
+            errorArray.push("rua");
         }
         // if nothing was typed into email OR the email does not follow the correct format
         if (this.state.email.length === 0 || !emailRegex.test(this.state.email)) {
-        errorArray.push("email");
+            errorArray.push("email");
         }
         // if nothing was typed into password
         if (this.state.password.length === 0) {
-        errorArray.push("password");
+            errorArray.push("password");
         }
         // if nothing was typed into confirm password
         if (this.state.confirmPassword.length === 0) {
-        errorArray.push("confirm password");
+            errorArray.push("confirm password");
         }
         // if password and confirm password don't matck
         if (this.state.password !== this.state.confirmPassword) {
-        errorArray.push("password dont't match");
+            errorArray.push("password dont't match");
         }
 
         // if array length is larger that 0, then we encountered an error with one of the input fields
         if (errorArray.length > 0) {
-        // construct error message string
-        let errorString = "Invalid input: ";
-        if (errorArray.length === 1) { // if we only encountered and error
-            errorString += errorArray[0] + ".";
-        } else {
-            for (var i = 0; i < errorArray.length; i += 1) {
-            if (i === errorArray.length-1) { // if i is the index of the last element in errorArray
-                errorString += "and " + errorArray[i] + ".";
+            // construct error message string
+            let errorString = "Invalid input: ";
+            if (errorArray.length === 1) { // if we only encountered and error
+                errorString += errorArray[0] + ".";
             } else {
-                errorString += errorArray[i] + ", ";
+                for (var i = 0; i < errorArray.length; i += 1) {
+                    if (i === errorArray.length-1) { // if i is the index of the last element in errorArray
+                        errorString += "and " + errorArray[i] + ".";
+                    } else {
+                        errorString += errorArray[i] + ", ";
+                    }
+                }
             }
-            }
-        }
-        // update error message
-        this.state.errorMessage = errorString;
-        this.setState({[this.state.errorMessage]: errorString});
+            // update error message
+            this.state.errorMessage = errorString;
+            this.setState({[this.state.errorMessage]: errorString});
 
-        return false;
+            return false;
         } else { // we encountered no error
-        // clear error message
-        this.state.errorMessage = "";
-        this.setState({[this.state.errorMessage]: ""});
-        
-        return true;      
+            // clear error message
+            this.state.errorMessage = "";
+            this.setState({[this.state.errorMessage]: ""});
+            
+            return true;      
         }
     };
 
