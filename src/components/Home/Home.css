@@ -38,3 +38,27 @@
 
 @media screen and (max-width: 1079px) {
 }
+
+.search-bar {
+    background-color: #c4c4c4;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+  
+.search-bar p {
+    color: black; 
+}
+  
+.search-bar h1 {
+    color: black; 
+}
+
+span[type="search-button"] {
+    background-color: #388E8E;
+    padding: 6px 10px;
+    padding-bottom: 10px;
+    border-radius: 4px;
+}
