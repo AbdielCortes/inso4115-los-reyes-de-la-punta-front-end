@@ -62,3 +62,26 @@ span[type="search-button"] {
     padding-bottom: 10px;
     border-radius: 4px;
 }
+
+/* Style for attorneys list */
+ul[type="attorneys"] {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}
+  
+/* Style for attorneys list elements */
+ul[type="attorneys"] li {
+    text-align: left;
+    border: 1px solid #ddd; /* Add a thin border to each list item */
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6; /* Add a grey background color */
+    padding: 12px; /* Add some padding */
+}
+  
+/* Style for links */
+a {
+    color: #000000;
+    text-decoration: none;
+}
+  

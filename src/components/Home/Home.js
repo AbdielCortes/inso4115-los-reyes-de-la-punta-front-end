@@ -2,12 +2,21 @@ import React, { Component } from 'react'
 import history from "../../Routing/history";
 import Navbar from "../Navbar/Navbar"
 import "./Home.css"
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 export class Home extends Component {
     state = {
-        query: ""
+        query: "",
+        attorneys: [
+            {name: "Fulano", id: "0"},
+            {name: "Fulana", id: "0"},
+            {name: "Juana", id: "0"},
+            {name: "Juan", id: "0"}
+        ],
+        loading: false,
+        isRevealedSearchResults: false
     };
 
     // handle fields change
@@ -15,13 +24,27 @@ export class Home extends Component {
         this.setState({[input]: e.target.value});
     }
 
+    toggleSearchResults = (e) => {
+        if (this.state.attorneys.length > 0) {
+            this.setState({ 
+                isRevealedSearchResults: true 
+            });
+        } else {
+            this.setState({ 
+                isRevealedSearchResults: false 
+            }); 
+        }
+
+    }
+
     // when the search button is pressed
     handleSubmit = (e) => {
         e.preventDefault();
         if (this.validateFields()) {
-        this.fetchCourses();
+            //this.fetchAttorneys();
+            this.toggleSearchResults();
         } else {
-        console.log("invalid fields");
+            console.log("invalid fields");
         }
     }
 
@@ -35,8 +58,8 @@ export class Home extends Component {
     };
 
     render() {
-        const { query } = this.state;
-        const values = { query }
+        const { query, attorneys, isRevealedSearchResults } = this.state;
+        const values = { query, attorneys, isRevealedSearchResults }
         return (
             <>
                 <Navbar/>
@@ -57,10 +80,29 @@ export class Home extends Component {
                             </div>
                         </form>
                     </div>
-                    <div className='start-text'>
-                        Make your divorce a fast process!
-                    </div>
-                    <button className='start-button' onClick={() => history.push("/signup")}>Register for Free!</button>
+                    {isRevealedSearchResults ? (
+                        <ul type="attorneys" >
+                            {attorneys.map(attorney => (
+                                <Link key={attorney.id} to={{
+                                pathname: "/attorney-profile",
+                                state: attorney
+                                }}>
+                                <li key={attorney.id} className="list-group-item">
+                                    {attorney.name}
+                                </li>
+                                </Link>
+                            ))}
+                        </ul>
+                    ) : (
+                        <div>
+                            <div className='start-text'>
+                                Make your divorce a fast process!
+                            </div>
+                            <button className='start-button' onClick={() => history.push("/signup")}>
+                                Register for Free!
+                            </button>
+                        </div>
+                    )}
                 </div>
 
             </>
