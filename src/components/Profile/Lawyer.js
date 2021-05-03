@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import history from "../../Routing/history";
 import "./Lawyer.css";
-import LawyerProfile from "./LawyerProfile";
 import Navbar from "../Navbar/Navbar"
 import axios from "axios";
 import jwt_decode from "jwt-decode";
@@ -11,27 +10,42 @@ import { attorneys } from "./DummyData";
 
 
 export class Lawyer extends Component {
-    state = {
-        name: "",
-        lastname: "",
-        rua: ""
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: "Juana",
+            lastname: "Del Pueblo",
+            rua: "12345678"
+        };
+        this.getAttorneyFromProps();
+    }
+
+    getAttorneyFromProps = (e) => {
+        console.log(this.props.location.state.name);
+        this.setState({ name: this.props.location.state.name });
+        console.log(this.state.name);
     };
 
     render() {
+        const { name, lastname, rua} = this.state;
+        const values = { name, lastname, rua};
         return (
             <div className="Lawyer">
-            <Navbar/>
+                <Navbar/>
                 <Grid  justify="flex-start" alignItems="flex-start" xs={12} style={{background:'#388E8E'}}>
                     <Typography style={{ color:'#fff'}} variant="h4">
-                        Name: 
+                        Name: {name}
                     </Typography>
                     <Typography style={{marginTop: '2%', color:'#fff'}} variant="h4">
-                        Lastname: 
+                        Lastname: {lastname}
                     </Typography>
                     <Typography style={{marginTop: '2%', color:'#fff'}} variant="h4">
-                        RUA: 
+                        RUA: {rua}
                     </Typography>
                 </Grid>
+                <button className='start-button' onClick={() => history.push("/")}>
+                    Start Consultation
+                </button>
             </div>
         );
     }
