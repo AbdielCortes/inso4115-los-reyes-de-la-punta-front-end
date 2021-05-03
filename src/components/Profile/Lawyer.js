@@ -17,10 +17,6 @@ export class Lawyer extends Component {
         rua: ""
     };
 
-    attorneys.map(( item ) => {
-        item
-    });
-
     render() {
         return (
             <div className="Lawyer">
