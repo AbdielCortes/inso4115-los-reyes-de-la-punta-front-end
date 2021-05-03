@@ -10,10 +10,10 @@ export class Home extends Component {
     state = {
         query: "",
         attorneys: [
-            {name: "Fulano", id: "0"},
-            {name: "Fulana", id: "0"},
-            {name: "Juana", id: "0"},
-            {name: "Juan", id: "0"}
+            {name: "Fulano", id: "1"},
+            {name: "Fulana", id: "2"},
+            {name: "Juana", id: "3"},
+            {name: "Juan", id: "4"}
         ],
         loading: false,
         isRevealedSearchResults: false
@@ -27,7 +27,7 @@ export class Home extends Component {
     toggleSearchResults = (e) => {
         if (this.state.attorneys.length > 0) {
             this.setState({ 
-                isRevealedSearchResults: true 
+                 isRevealedSearchResults: true 
             });
         } else {
             this.setState({ 
